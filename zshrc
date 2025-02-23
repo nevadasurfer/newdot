@@ -123,3 +123,8 @@ alias kdn="kubectl describe node"
 alias kgen="kubectl run --generator=run-pod/v1"
 alias kall="kubectl get all --all-namespaces"
 alias tf="terraform"
+alias check_taint="kubectl get nodes -o=json | jq -r '.items[] | .metadata.name + "\t" + (if .spec.taints then (.spec.taints | map(.key + "=" + (.value // "") + ":" + .effect) | join(", ")) else "No taints" end)'"
+alias docker_stop="docker stop $(docker ps -a -q)"
+
+
+PROMPT='$(kube_ps1)'$PROMPT # or RPROMPT='$(kube_ps1)'
