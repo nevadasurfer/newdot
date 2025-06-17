@@ -70,6 +70,8 @@ alias kds="kubectl describe service"
 alias kdn="kubectl describe node"
 alias kgen="kubectl run --generator=run-pod/v1"
 alias kall="kubectl get all --all-namespaces"
+alias kctx="kubectl config use-context"
+alias kga="kubectl get all"
 alias tf='terraform'
 alias tfa='terraform apply'
 alias tfc='terraform console'
